@@ -16,7 +16,7 @@
             theme: {
                 extend: {
                     colors: {
-                        primari: '#B4F461',
+                        primary: '#B4F461',
                     },
                     fontFamily: {
                         lexend: ['"Lexend"', 'sans-serif'],
@@ -28,24 +28,30 @@
 </head>
 
 <body class="font-lexend">
-    <header class="sticky z-10 top-0 bg-gray-50 lg:pb-5 bg-transparent backdrop-filter backdrop-blur-lg">
-        <nav class="bg-[#f9f7f3] flex justify-between items-center py-6 lg:px-32 px-4">
-            <a class="bg-primari lg:px-7 lg:py-2 px-4 py-1 rounded-xl text-black" href="blog.html">Blog</a>
+    <header class="bg-gray-50 lg:pb-12 bg-transparent backdrop-filter backdrop-blur-lg">
+        <nav class="bg-[#f9f7f3] flex justify-between items-center py-6 lg:px-32 px-6">
+            <a class="bg-primary rounded-xl text-black" href="">Blog</a>
+            <!-- <a class="bg-primary lg:px-6 lg:py-4 px-6 py-2 rounded-xl text-black" href="blog.html">Blog</a> -->
             <div class="flex items-center justify-between ml-4">
-                <img class="w-8 lg:w-[30px]" src="./assets/logo.png" alt="">
-                <h1 class="lg:text-2xl font-bold lg:ml-4 lg:block hidden">Donate Bangladesh</h1>
+                <img class="w-8 lg: w-[36px]" src="./assets/logo.png" alt="">
+                <!-- <img class="w-8 lg:w-[36px]" src="./assets/logo.png" alt=""> -->
+                <h1 class="lg:text-3xl font-bold lg:ml-6 lg:block hidden">Donate Bangladesh</h1>
             </div>
+                    <div>
+
+                    </div>
             <div class="flex items-center">
-                <img class="w-8 lg:w-[30px]" src="./assets/coin.png" alt="">
-                <h1 class="lg:text-xl lg:ml-3">
-                    <span id="balance">5500</span> BDT
+                <img class="w-8 lg:w-[32px]" src="./assets/coin.png" alt="">
+                <!-- <img class="w-8 lg:w-[32px]" src="./assets/coin.png" alt=""> -->
+                <h1 class="lg:text-xl lg:ml-4">
+                    <span id="balance">5500</span>Taka
                 </h1>
             </div>
         </nav>
-        <section class="flex justify-center mt-10 space-x-4">
+        <!-- <section class="flex justify-center mt-10 space-x-4">
             <button id="donation" class="bg-primari px-6 py-2 rounded-xl">Donation</button>
             <button id="history" class="border-2 px-6 py-2 rounded-xl hover:bg-gray-200">History</button>
-        </section>
+        </section> -->
     </header>
 </body>
 
