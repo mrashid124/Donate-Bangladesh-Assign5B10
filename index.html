@@ -1,11 +1,52 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Donate Bangladesh</title>
+    <!-- google font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lexend:wght@100..900&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@4.12.10/dist/full.min.css" rel="stylesheet" type="text/css" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primari: '#B4F461',
+                    },
+                    fontFamily: {
+                        lexend: ['"Lexend"', 'sans-serif'],
+                    },
+                }
+            }
+        }
+    </script>
 </head>
-<body>
-    
+
+<body class="font-lexend">
+    <header class="sticky z-10 top-0 bg-gray-50 lg:pb-5 bg-transparent backdrop-filter backdrop-blur-lg">
+        <nav class="bg-[#f9f7f3] flex justify-between items-center py-6 lg:px-32 px-4">
+            <a class="bg-primari lg:px-7 lg:py-2 px-4 py-1 rounded-xl text-black" href="blog.html">Blog</a>
+            <div class="flex items-center justify-between ml-4">
+                <img class="w-8 lg:w-[30px]" src="./assets/logo.png" alt="">
+                <h1 class="lg:text-2xl font-bold lg:ml-4 lg:block hidden">Donate Bangladesh</h1>
+            </div>
+            <div class="flex items-center">
+                <img class="w-8 lg:w-[30px]" src="./assets/coin.png" alt="">
+                <h1 class="lg:text-xl lg:ml-3">
+                    <span id="balance">5500</span> BDT
+                </h1>
+            </div>
+        </nav>
+        <section class="flex justify-center mt-10 space-x-4">
+            <button id="donation" class="bg-primari px-6 py-2 rounded-xl">Donation</button>
+            <button id="history" class="border-2 px-6 py-2 rounded-xl hover:bg-gray-200">History</button>
+        </section>
+    </header>
 </body>
+
 </html>
