@@ -29,39 +29,33 @@
 
 <body class="font-lexend">
     <header class="bg-gray-50 lg:pb-12 bg-transparent backdrop-filter backdrop-blur-lg">
-        <nav class="bg-[#f9f7f3] flex justify-between items-center py-6 lg:px-32 px-6">
-            <a class="bg-primary rounded-xl text-black" href="">Blog</a>
-            <!-- <a class="bg-primary lg:px-6 lg:py-4 px-6 py-2 rounded-xl text-black" href="blog.html">Blog</a> -->
-            <div class="flex items-center justify-between ml-4">
-                <img class="w-8 lg: w-[36px]" src="./assets/logo.png" alt="">
-                <!-- <img class="w-8 lg:w-[36px]" src="./assets/logo.png" alt=""> -->
-                <h1 class="lg:text-3xl text-xl font-bold lg:ml-6 lg:block hidden">Donate Bangladesh</h1>
-            </div>
-                    <div>
-
-                    </div>
-            <div class="flex items-center">
-                <img class="w-8 lg:w-[32px]" src="./assets/coin.png" alt="">
-                <!-- <img class="w-8 lg:w-[32px]" src="./assets/coin.png" alt=""> -->
-                <h1 class="lg:text-xl lg:ml-4">
-                    <span id="balance">5500</span>BDT
-                </h1>
+        <!-- Navbar -->
+        <nav class="bg-[#F9F7F3] backdrop-blur-xl py-6">
+            <div class="flex items-center md:flex md:justify-between   md:max-w-screen-xl md:mx-auto max-w-screen-xl justify-around mx-auto  ">
+                <div class="ml-2">
+                    <button onclick="blog(this)" class="btn btn-ghost bg-[#B4F461] rounded-lg text-xl">Blog</button>
+                </div>
+                <div class="flex  items-center justify-center  gap-3  md:flex md:justify-center md:items-center md:gap-5">
+                    <img class="w-12 lg: w-[36px]"  src="./assets/logo.png" alt="">
+                    <h2 class="lg:text-3xl text-xl font-bold lg:ml-6 lg:block hidden">Donate Bangladesh</h2>
+                </div>
+                <div class=" flex gap-3">
+                    <img class="w-12 lg: w-[36px]" src="./assets/coin.png" alt="">
+                    <p class="lg:text-xl lg:ml-4"><span id="total">5500</span> BDT</p>
+                </div>
             </div>
         </nav>
-
-        <!-- Toogle Buttons -->
+        
+        <!-- Toggle Buttons Section -->
          <div class="flex justify-center mt-10 space-x-4">
-            <button id="donation" class="bg-primari px-6 py-2 rounded-xl">Donation</button>
+            <button id="donate" class="bg-primari px-6 py-2 rounded-xl">Donation</button>
             <button id="history" class="border-2 px-6 py-2 rounded-xl hover:bg-gray-200">History</button>
          </div>
-        <!-- <section class="flex justify-center mt-10 space-x-4">
-            <button id="donation" class="bg-primari px-6 py-2 rounded-xl">Donation</button>
-            <button id="history" class="border-2 px-6 py-2 rounded-xl hover:bg-gray-200">History</button>
-        </section> -->
+       
     </header>
 
     <main class="max-w-6xl mx-auto">
-        <!-- Card #1 -->
+    <!-- Card #1 -->
         <div class="card border-2 rounded-xl lg:my-12 my-6 mx-3 p-6 lg:grid lg:grid-cols-2 lg:space-x-6 space-x-2">
             <div>
                 <img class="lg:w-[525px] lg:h-[375px]" src="./assets/noakhali.png" alt="">
@@ -82,7 +76,7 @@
             </div>
 
         </div>
-                <!-- Card #2 -->
+    <!-- Card #2 -->
                 <div class="card border-2 rounded-xl lg:my-12 my-6 mx-3 p-6 lg:grid lg:grid-cols-2 lg:space-x-6 space-x-2">
                     <div>
                         <img class="lg:w-[525px] lg:h-[375px]" src="./assets/feni.png" alt="">
@@ -111,7 +105,7 @@
                     </div>
         
                 </div>
-                        <!-- Card#3 -->
+     <!-- Card#3 -->
         <div class="card border-2 rounded-xl lg:my-12 my-6 mx-3 p-6 lg:grid lg:grid-cols-2 lg:space-x-6 space-x-2">
             <div>
                 <img class="lg:w-[525px] lg:h-[375px]" src="./assets/quota-protest.png" alt="">
@@ -142,6 +136,33 @@
         </div>
 
     </main>
+
+    <!-- Bonus Modal section -->
+     <section>
+        <dialog id="my_modal_1" class="modal">
+            <div class="modal-box flex justify-center flex-col items-center space-y-1">
+              <h3 class="text-2xl font-bold">Congrates !</h3>
+              <img class="w-[40px]" src="./assets/coin.png" alt="">
+              <p class="py-3">You Have Donated for Humankind</p>
+              <h3 class="text-lg font-bold">Successfully</h3>
+              <div class="modal-action">
+                <form method="dialog">
+                  <button id="close-modal" class="btn">close confirmation</button>
+                </form>
+              </div>
+            </div>
+          </dialog>
+     </section>
+
+     <!-- History Page Section -->
+      <section>
+        <div id="history-menu" class="lg:mx-40 hidden">
+        </div>
+      </section>     
+      <!-- Footer Section -->
+      <footer class="h-20 bg-[#f9f7f3] mt-10"></footer>
+
+      <script src="./JS/main.js"></script>
 </body>
 
 </html>
