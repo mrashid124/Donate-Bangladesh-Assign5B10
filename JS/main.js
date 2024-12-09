@@ -1,85 +1,142 @@
-// Toggle buttons
-const donateBtn = document.getElementById('donation-button');
-console.log("donateBtn");
-const historyBtn = document.getElementById('history-button');
-const historyMenu = document.getElementById('history-menu');
-const donationSection = document.getElementById('donation-section');
+// Link Functions
+function blogPage() {
+    window.location.href = "blog.html";
+  }
+function homePage() {
+    window.location.href = "index.html";
+  }
 
-historyBtn.addEventListener('click', function() {
-    donationSection.classList.add('hidden');
-    historyMenu.classList.remove('hidden');
-    historyBtn.classList.add('bg-primary');
-    donateBtn.classList.remove('bg-primary','hover:bg-gray-200');
-    donateBtn.classList.add('border-2','hover:bg-gray-200');
-    historyBtn.classList.remove('hover:bg-gray-200')
-})
 
-donateBtn.addEventListener('click', function(){
-    historyMenu.classList.add('hidden');
-    donationSection.classList.remove('hidden')
-    historyBtn.classList.remove('bg-primary');
-    donateBtn.classList.add('bg-primary',);
-    donateBtn.classList.remove('border-2')
-})
-function convertValue(id){
+// Input Functions
+function inputValue(id) {
     return parseFloat(document.getElementById(id).value);
-}
+  }
+function inputText(id) {
+    return document.getElementById(id).innerText;
+  }
 
-function calculatePrice(total, donationAmount, donationText, postTitle){
-    const AccountBalance = parseFloat(document.getElementById(total).innerText);
-    const donationPriceValid = document.getElementById(donationAmount).value.trim();
-    const donationPrice = convertValue(donationAmount);
-    
-    const validNumber = /^\d+(\.\d+)?$/.test(donationPriceValid);
-    if(!validNumber || donationPrice <= 0 || isNaN(donationPrice)){
-        return alert('Invalid Donation');
+
+// Balance Total
+const balanceTotal = document.getElementById("balance-total");
+let total = parseFloat(balanceTotal.innerText);
+
+//  Noakhali Donation
+const btnNoakhali = document.getElementById("btn-card1");
+btnNoakhali.addEventListener("click", function () {
+ 
+  const amountNoakhali = inputValue("donation-amount1");
+
+  if (amountNoakhali <= 0 || amountNoakhali === "" || amountNoakhali > total || isNaN(amountNoakhali))
+    {
+    alert("Invalid Donation Amount");
+    return;
     }
-    if(AccountBalance < donationPrice){
-        return alert('insufficient balance')
-    }
-    const totalDonation = AccountBalance - donationPrice;
-    document.getElementById(total).innerText = totalDonation.toFixed(2)
+ 
+  const titleNoa = inputText("title1");
 
-    const donationValueEl = document.getElementById(donationText);
-    const donationValue = parseFloat(donationValueEl.innerText)
+  const donationNoa = document.getElementById("donation-price1");
+  let noaDonationTotal = parseFloat(donationNoa.innerText);
 
-    const newDonation = donationPrice + donationValue;
-    donationValueEl.innerText = newDonation.toFixed(2);
-    document.getElementById(donationAmount).value = '';
-    
-    //history
-    const donationTitel = document.getElementById(postTitle).innerText;
-    const historyDiv = document.getElementById('history-menu')
-    const history = document.createElement('div');
-    history.innerHTML += `
-        <div class="border-2 p-5 rounded-xl mt-4 space-y-4">
-            <h1>${donationPrice.toFixed(2)} ${donationTitel}</h1>
-            <p>${new Date().toString()}</p>
-        </div>
-    `
-    historyDiv.insertBefore(history, historyDiv.firstChild)
+  noaDonationTotal = noaDonationTotal + amountNoakhali;
+  donationNoa.innerText = noaDonationTotal;
 
-    //show modal
-    document.getElementById('my_modal_1').showModal();
-}
-// Close the modal
-document.getElementById('close-modal').addEventListener('click', function() {
-    document.getElementById('my_modal_1').close();
+  total = total - amountNoakhali;
+  balanceTotal.innerText = total;
+
+  const modalNoa = document.getElementById("modal1");
+  modalNoa.showModal();
+
+  document.getElementById("donation-amount1").value = "";
+
+  const historyDiv = document.createElement("div");
+  historyDiv.className = "bg-white p-5 rounded-xl border border-gray-300";
+  historyDiv.innerHTML = `
+    <p class="text-base font-semibold">${amountNoakhali} Taka is Donated for ${titleNoa}</p><br>
+    <p class="text-xs text-gray-500">Date : ${new Date().toString()}</p>
+  `;
+
+  const historySection = document.getElementById("history-menu");
+  historySection.insertBefore(historyDiv, historySection.firstChild);
 });
 
-// card# 1:
 
-document.getElementById('btn-card1').addEventListener('click', function(){
-        calculatePrice('total', 'donation-amount1', 'donation-price1', 'title1')
-    }
-)
-// card# 2:
-document.getElementById('btn-card2').addEventListener('click', function(){
-        calculatePrice('total', 'donation-amount2', 'donation-price2', 'title2')
-    }
-)
-// card# 3:
-document.getElementById('btn-card3').addEventListener('click', function(){
-        calculatePrice('total', 'donation-amount3', 'donation-price3', 'title3')
-    }
-)
+// Feni donation 
+
+const btnFeni = document.getElementById("btn-card2");
+btnFeni.addEventListener("click", function () {
+ 
+  const amountFeni = inputValue("donation-amount2");
+
+  if (amountFeni <= 0 || amountFeni === "" || amountFeni > total || isNaN(amountFeni)) 
+    {
+    alert("Invalid Donation Amount");
+    return;
+     }
+
+  const titleFeni = inputText("title2");
+
+  const donationFeni = document.getElementById("donation-price2");
+  let feniDonationTotal = parseFloat(donationFeni.innerText);
+
+  feniDonationTotal = feniDonationTotal + amountFeni;
+  donationFeni.innerText = feniDonationTotal;
+
+  total = total - amountFeni;
+  balanceTotal.innerText = total;
+
+  const modalFeni = document.getElementById("modal1");
+  modalFeni.showModal();
+
+  document.getElementById("donation-amount2").value = "";
+
+  // History DIV
+  const historyDiv = document.createElement("div");
+  historyDiv.className = "bg-white p-5 rounded-xl border border-gray-300";
+  historyDiv.innerHTML = `
+    <p class="text-base font-semibold">${amountFeni} Taka is Donated for ${titleFeni}</p><br>
+    <p class="text-xs text-gray-500">Date : ${new Date().toString()}</p>
+  `;
+
+  const historySection = document.getElementById("history-menu");
+  historySection.insertBefore(historyDiv, historySection.firstChild);
+});
+
+// Quota donation 
+const btnQuota = document.getElementById("btn-card3");
+btnQuota.addEventListener("click", function () {
+  
+  const amountQuota = inputValue("donation-amount3");
+
+  if (
+    amountQuota <= 0 || amountQuota === "" || amountQuota > total || isNaN(amountQuota)) 
+    {
+    alert("Invalid Donation Amount");
+    return;
+     }
+
+  const titleQuota = inputText("title3");
+
+  const donationQuota = document.getElementById("donation-price3");
+  let quotaDonationTotal = parseFloat(donationQuota.innerText);
+
+  quotaDonationTotal = quotaDonationTotal + amountQuota;
+  donationQuota.innerText = quotaDonationTotal;
+
+  total = total - amountQuota;
+  balanceTotal.innerText = total;
+
+  const modalQuota = document.getElementById("modal1");
+  modalQuota.showModal();
+
+   document.getElementById("donation-amount3").value = "";
+
+  const historyDiv = document.createElement("div");
+  historyDiv.className = "bg-white p-5 rounded-xl border border-gray-300";
+  historyDiv.innerHTML = `
+    <p class="text-base font-semibold">${amountQuota} Taka is Donated for ${titleQuota}</p><br>
+    <p class="text-xs text-gray-500">Date : ${new Date().toString()}</p>
+  `;
+
+  const historySection = document.getElementById("history-menu");
+  historySection.insertBefore(historyDiv, historySection.firstChild);
+});

@@ -36,12 +36,12 @@
                     <button onclick="blog(this)" class="btn btn-ghost bg-[#B4F461] rounded-lg text-xl">Blog</button>
                 </div>
                 <div class="flex  items-center justify-center  gap-3  md:flex md:justify-center md:items-center md:gap-5">
-                    <img class="w-12 lg: w-[36px]"  src="./assets/logo.png" alt="">
+                    <img class="w-10 lg: w-[36px]"  src="./assets/logo.png" alt="">
                     <h2 class="lg:text-3xl text-xl font-bold lg:ml-6 lg:block hidden">Donate Bangladesh</h2>
                 </div>
                 <div class=" flex gap-3">
-                    <img class="w-12 lg: w-[36px]" src="./assets/coin.png" alt="">
-                    <p class="lg:text-xl lg:ml-4"><span id="total">5500</span> BDT</p>
+                    <img class="w-10 lg: w-[36px]" src="./assets/coin.png" alt="">
+                    <p class="lg:text-xl lg:ml-4"><span id="balance-total">5500</span> BDT</p>
                 </div>
             </div>
         </nav>
@@ -64,13 +64,15 @@
                 <div class="flex w-[125px] p-3 rounded-xl bg-[#1111110D]">
                     <img src="./assets/coin.png" alt="">
                     <h2 class="ml-2">
-                        <span id="donation-price">0</span>
+                        <span id="donation-price1">0</span>
                     BDT</h2>
 
                 </div>
                 <h1 id="title1" class="text-xl font-bold">Donate for Flood at Noakhali, Bangladesh. </h1>
+
                 <p>The recent floods in Noakhali have caused significant damage to homes  infrastructure. Your donation will help provide essential supplies and  to those affected by this disaster. Every contribution, big or small, makes  difference. Please join us in supporting the relief efforts and making a positive impact on the lives of those in need.</p>
-                <input id="donation-ammount" class="input input-bordered w-full" placeholder="Write Donation Amount" type="text"/> 
+                
+                <input id="donation-amount1" class="input input-bordered w-full" placeholder="Write Donation Amount" type="text"/> 
                 <br>
                 <button id="btn-card1" class="bg-primary font-semibold w-full py-2 rounded-lg modal-button">Donate Now</button>
             </div>
@@ -85,7 +87,7 @@
                         <div class="flex w-[125px] p-3 rounded-xl bg-[#1111110D]">
                             <img src="./assets/coin.png" alt="">
                             <h2 class="ml-2">
-                                <span id="donation-price2">600</span>
+                                <span id="donation-price2">0</span>
                             BDT</h2>
         
                         </div>
@@ -114,7 +116,7 @@
                 <div class="flex w-[135px] p-2 rounded-xl bg-[#1111110D]">
                     <img src="./assets/coin.png" alt="">
                     <h2 class="ml-2">
-                        <span id="donation-price3">2400</span>
+                        <span id="donation-price3">0</span>
                     BDT</h2>
 
                 </div>
@@ -128,7 +130,7 @@
                     alleviating their suffering and aiding in their recovery. Please
                     consider making a donation to support these brave individuals in
                     their time of need.</p>
-                <input id="donation-ammount3" class="input input-bordered w-full" placeholder="Write Donation Amount" type="text"/> 
+                <input id="donation-amount3" class="input input-bordered w-full" placeholder="Write Donation Amount" type="text"/> 
                 <br>
                 <button id="btn-card3" class="bg-primary font-semibold w-full py-2 rounded-lg modal-button">Donate Now</button>
             </div>
@@ -139,7 +141,7 @@
 
     <!-- Bonus Modal section -->
      <section>
-        <dialog id="my_modal_1" class="modal">
+        <dialog id="modal1" class="modal">
             <div class="modal-box flex justify-center flex-col items-center space-y-1">
               <h3 class="text-2xl font-bold">Congratulation</h3>
               <img class="w-[40px]" src="./assets/coin.png" alt="">
@@ -147,7 +149,7 @@
               <h3 class="text-lg font-bold">Successfully</h3>
               <div class="modal-action">
                 <form method="dialog">
-                  <button id="close-modal" class="btn">close confirmation</button>
+                  <button id="modal-close1" class="btn">Close confirmation</button>
                 </form>
               </div>
             </div>
