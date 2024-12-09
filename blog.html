@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Donate Bangladesh</title>
+    <!-- google font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lexend:wght@100..900&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@4.12.10/dist/full.min.css" rel="stylesheet" type="text/css" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#B4F461',
+                    },
+                    fontFamily: {
+                        lexend: ['"Lexend"', 'sans-serif'],
+                    },
+                }
+            }
+        }
+    </script>
+</head>
+
+<body class="font-lexend">
+    <header class="bg-gray-50 lg:pb-12 bg-transparent backdrop-filter backdrop-blur-lg sticky">
+        <!-- Navbar -->
+        <nav class="bg-[#F9F7F3] backdrop-blur-xl py-6">
+            <div class="flex items-center md:flex md:justify-between   md:max-w-screen-xl md:mx-auto max-w-screen-xl justify-around mx-auto  ">
+                <div class="ml-2">
+                    <button onclick="homePage()" class="btn btn-ghost bg-[#B4F461] rounded-lg text-xl">Home</button>
+                </div>
+                <div class="flex  items-center justify-center  gap-3  md:flex md:justify-center md:items-center md:gap-5">
+                    <img class="w-10 lg: w-[36px]"  src="./assets/logo.png" alt="">
+                    <h2 class="lg:text-3xl text-xl font-bold lg:ml-6 lg:block hidden">Donate Bangladesh</h2>
+                </div>
+                <div class=" flex gap-3">
+                    <img class="w-10 lg: w-[36px]" src="./assets/coin.png" alt="">
+                    <p class="lg:text-xl lg:ml-4"><span id="total">5500</span> BDT</p>
+                </div>
+            </div>
+        </nav>
+        
+        <!-- Toggle Buttons Section -->
+         <div class="flex justify-center mt-10 space-x-4">
+            <button id="donation-button" class="bg-primary px-6 py-2 rounded-xl">Donation</button>
+            <button id="history-button" class="border-2 px-6 py-2 rounded-xl hover:bg-gray-200">History</button>
+         </div>
+       
+    </header>
+
+    <main class="mx-auto space-y-5 lg:mx-40">
+        <h1 class="text-3xl font-bold">Important FAQ</h1>
+          <div class="collapse collapse-plus ">
+              <input type="radio" name="my-accordion-3" checked="checked" />
+              <div class="collapse-title text-xl font-medium">What is the Document Object Model (Dom) ?</div>
+              <div class="collapse-content">
+                <p>
+                  The Document Object Model (DOM) is a programming interface that represents the structure of an HTML or XML document as a tree of objects</p>
+              </div>
+            </div>
+            <div class="collapse collapse-plus ">
+              <input type="radio" name="my-accordion-3" />
+              <div class="collapse-title text-xl font-medium">How do you select an element from the DOM?</div>
+              <div class="collapse-content">
+                <p>You can select an element from the DOM using methods like getElementById(), querySelector(), or getElementsByClassName(). </p>
+              </div>
+            </div>
+            <div class="collapse collapse-plus ">
+              <input type="radio" name="my-accordion-3" />
+              <div class="collapse-title text-xl font-medium"> What is event delegation in the context of the DOM, and Why is it useful?</div>
+              <div class="collapse-content">
+                <p> Event delegation is a technique in the DOM where you attach a single event listener to a parent element rather than adding listeners to individual child elements. </p>
+              </div>
+            </div>
+            <div class="collapse collapse-plus ">
+              <input type="radio" name="my-accordion-3" />
+              <div class="collapse-title text-xl font-medium">How do you manipulate an element's attributes and style using the DOM</div>
+              <div class="collapse-content">
+                <p>Use setAttribute(), getAttribute(), or directly access properties like element.id</p>
+              </div>
+            </div>
+      </main>
+
+          
+      <!-- Footer Section -->
+      <footer class="h-24 bg-[#f9f7f3] mt-10"></footer>
+
+      <script src="./JS/main.js"></script>
+</body>
+
+</html>
